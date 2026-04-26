@@ -1,0 +1,274 @@
+:root {
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --secondary: #16a34a;
+  --accent: #f59e0b;
+  --bg: #f3f7fb;
+  --surface: #ffffff;
+  --muted: #e2e8f0;
+  --text: #1e293b;
+  --danger: #dc2626;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(140deg, #f3f7fb 0%, #eef6ff 55%, #eefaf2 100%);
+  color: var(--text);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.login-page,
+.loading-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+
+.dashboard-page {
+  padding: 18px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  gap: 12px;
+}
+
+.topbar h1 {
+  margin: 0;
+}
+h1 {
+  text-align: center;
+  margin: 0;
+}
+
+.card {
+  background: var(--surface);
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid #dbe6f2;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+}
+
+.login-card {
+  width: min(460px, 100%);
+  display: grid;
+  gap: 10px;
+}
+
+.login-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: linear-gradient(145deg, #dbeafe, #dcfce7);
+  place-items: center;
+  font-size: 30px;
+  margin: 0 auto;
+}
+
+.login-subtitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 6px;
+  color: #475569;
+}
+
+label {
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 11px 12px;
+  border-radius: 10px;
+  border: 1px solid #bfd0e2;
+  font-size: 14px;
+  background: #fff;
+}
+
+textarea {
+  min-height: 92px;
+  resize: vertical;
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+.ui-button:focus {
+  outline: 3px solid rgba(37, 99, 235, 0.2);
+  outline-offset: 1px;
+}
+
+.ui-button {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: none;
+  background: var(--primary);
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.ui-button:hover {
+  background: var(--primary-dark);
+}
+
+.ui-button.secondary {
+  background: #dbeafe;
+  color: #1e3a8a;
+}
+
+.ui-button.secondary:hover {
+  background: #bfdbfe;
+}
+
+.ui-button.danger {
+  background: var(--danger);
+}
+
+.ui-button.danger:hover {
+  background: #b91c1c;
+}
+
+.ui-button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.toolbar,
+.inline-group,
+.actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.toolbar {
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.form-grid {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 980px;
+}
+
+th,
+td {
+  border-bottom: 1px solid #e2e8f0;
+  text-align: left;
+  padding: 11px 8px;
+  vertical-align: top;
+}
+
+th {
+  color: #334155;
+  font-size: 14px;
+}
+
+.form-message {
+  margin: 4px 0;
+  font-weight: 500;
+}
+
+.form-message.error {
+  color: #b91c1c;
+}
+
+.form-message.success {
+  color: #166534;
+}
+
+.form-message.info {
+  color: #1d4ed8;
+}
+
+.empty-state {
+  color: #475569;
+  padding: 8px 2px;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+  display: grid;
+  place-items: center;
+  z-index: 20;
+  padding: 14px;
+}
+
+.modal-card {
+  width: min(500px, 95vw);
+}
+
+@media (max-width: 900px) {
+  .dashboard-page {
+    padding: 12px;
+  }
+
+  .toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .inline-group {
+    width: 100%;
+  }
+
+  .inline-group .ui-button,
+  .inline-group select {
+    flex: 1 1 170px;
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    padding: 14px;
+  }
+
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .topbar .ui-button {
+    width: 100%;
+  }
+
+  .actions .ui-button {
+    flex: 1 1 100%;
+  }
+}
