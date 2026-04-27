@@ -67,9 +67,6 @@ export function DashboardPage() {
             <UIButton variant="secondary" onClick={() => visitRecordService.exportExcel(order)}>
               Exportar a Excel
             </UIButton>
-            <UIButton variant="secondary" onClick={() => visitRecordService.exportPdf(order)}>
-              Exportar a PDF
-            </UIButton>
             <select value={order} onChange={(event) => setOrder(event.target.value as "asc" | "desc")}>
               <option value="desc">Más recientes primero</option>
               <option value="asc">Más antiguos primero</option>
